@@ -245,8 +245,7 @@ jobs:
           fi
 
           # Apply new KernelSU patches
-          curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
-
+          curl -LSs https://raw.githubusercontent.com/lsfqxd2006/ReSukiSU/v4.1.0_34965/kernel/setup.sh | bash -s v4.1.0_34965
           # Add KernelSU configurations if not already present
           if ! grep -q "CONFIG_KSU=" "arch/${{ env.ARCH }}/configs/${{ env.KERNEL_DEFCONFIG_PATH }}"; then
             echo -e "CONFIG_KSU=y" >> arch/${{ env.ARCH }}/configs/${{ env.KERNEL_DEFCONFIG_PATH }}
